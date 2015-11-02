@@ -41,4 +41,12 @@
 		<birthday>1987-06-08</birthday>
 		<memo>好学生</memo>
 	</student>
+	<student id="5" group="5">
+		<name>小明commit-1</name>
+		<sex>男commit-1</sex>
+		<age>18</age>
+		<email>xiaoming@163.com</email>
+		<birthday>1987-06-08</birthday>
+		<memo>好学生commit-1</memo>
+	</student>
 </root>
