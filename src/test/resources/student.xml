@@ -41,7 +41,7 @@
 		<birthday>1987-06-08</birthday>
 		<memo>好学生</memo>
 	</student>
-	<student id="5" group="5">
+	<student id="6" group="5">
 		<name>小明commit-1</name>
 		<sex>男commit-1</sex>
 		<age>18</age>
