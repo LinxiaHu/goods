@@ -19,17 +19,24 @@ public class ItemListTest {
 		List<Items> itemsList = new ArrayList<Items>();
 
 		Items items_1 = new Items();
-		items_1.setName("联想笔记本");
+		items_1.setName("lenove");
 		items_1.setPrice(6000f);
-		items_1.setDetail("ThinkPad T430 联想笔记本电脑！");
+		items_1.setDetail("ThinkPad T430");
 
 		Items items_2 = new Items();
-		items_2.setName("苹果手机");
+		items_2.setName("apple");
 		items_2.setPrice(5000f);
-		items_2.setDetail("iphone6苹果手机！");
+		items_2.setDetail("iphone6 apple");
+
+		Items items_3 = new Items();
+		items_3.setName("sansung");
+		items_3.setPrice(5000f);
+		items_3.setDetail("sansung note5!");
+
 
 		itemsList.add(items_1);
 		itemsList.add(items_2);
+		itemsList.add(items_3);
 
 		// 创建modelAndView准备填充数据、设置视图
 		ModelAndView modelAndView = new ModelAndView();
