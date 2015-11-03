@@ -19,19 +19,19 @@ public class ItemListTest {
         List<Items> itemsList = new ArrayList<Items>();
 
         Items items_1 = new Items();
-        items_1.setName("lenove");
+        items_1.setName("lenove联想电脑");
         items_1.setPrice(6000f);
         items_1.setDetail("ThinkPad T430");
 
         Items items_2 = new Items();
         items_2.setName("apple");
         items_2.setPrice(5000f);
-        items_2.setDetail("iphone6 apple");
+        items_2.setDetail("iphone6 apple 苹果手机！");
 
         Items items_3 = new Items();
-        items_3.setName("sansung");
+        items_3.setName("samsung三星手机");
         items_3.setPrice(5000f);
-        items_3.setDetail("sansung note5!");
+        items_3.setDetail("samsung note5!");
 
 
         itemsList.add(items_1);
