@@ -12,40 +12,40 @@ import com.hd.ssm.pojo.Items;
 
 @Controller
 public class ItemListTest {
-	@RequestMapping(value = "/queryItem.action", method = { RequestMethod.POST,
-			RequestMethod.GET })
-	public ModelAndView queryItem() {
-		// 商品列表
-		List<Items> itemsList = new ArrayList<Items>();
+    @RequestMapping(value = "/queryItem.action", method = {RequestMethod.POST,
+            RequestMethod.GET})
+    public ModelAndView queryItem() {
+        // 商品列表
+        List<Items> itemsList = new ArrayList<Items>();
 
-		Items items_1 = new Items();
-		items_1.setName("lenove");
-		items_1.setPrice(6000f);
-		items_1.setDetail("ThinkPad T430");
+        Items items_1 = new Items();
+        items_1.setName("lenove");
+        items_1.setPrice(6000f);
+        items_1.setDetail("ThinkPad T430");
 
-		Items items_2 = new Items();
-		items_2.setName("apple");
-		items_2.setPrice(5000f);
-		items_2.setDetail("iphone6 apple");
+        Items items_2 = new Items();
+        items_2.setName("apple");
+        items_2.setPrice(5000f);
+        items_2.setDetail("iphone6 apple");
 
-		Items items_3 = new Items();
-		items_3.setName("sansung");
-		items_3.setPrice(5000f);
-		items_3.setDetail("sansung note5!");
+        Items items_3 = new Items();
+        items_3.setName("sansung");
+        items_3.setPrice(5000f);
+        items_3.setDetail("sansung note5!");
 
 
-		itemsList.add(items_1);
-		itemsList.add(items_2);
-		itemsList.add(items_3);
+        itemsList.add(items_1);
+        itemsList.add(items_2);
+        itemsList.add(items_3);
 
-		// 创建modelAndView准备填充数据、设置视图
-		ModelAndView modelAndView = new ModelAndView();
-		// 填充数据
-		modelAndView.addObject("itemsList", itemsList);
-		// 视图
-		modelAndView.setViewName("order/itemsList");
+        // 创建modelAndView准备填充数据、设置视图
+        ModelAndView modelAndView = new ModelAndView();
+        // 填充数据
+        modelAndView.addObject("itemsList", itemsList);
+        // 视图
+        modelAndView.setViewName("order/itemsList");
 
-		return modelAndView;
-	}
+        return modelAndView;
+    }
 
 }
