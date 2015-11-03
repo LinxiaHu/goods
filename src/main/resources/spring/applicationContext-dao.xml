@@ -60,7 +60,7 @@
 
 	<!-- mapper扫描器,代替MapperFactoryBean:根据mapper接口生成动态代理对象 ；但是mapper.xml和mapper.java必须在同一目录下，且同名 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.hd.ssm.mapper"></property>
+		<property name="basePackage" value="com.hd.ssm.mapper"/>
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 

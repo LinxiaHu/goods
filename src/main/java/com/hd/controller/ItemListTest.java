@@ -19,9 +19,9 @@ public class ItemListTest {
         List<Items> itemsList = new ArrayList<Items>();
 
         Items items_1 = new Items();
-        items_1.setName("lenove联想电脑");
+        items_1.setName("lenove联想电脑-y700");
         items_1.setPrice(6000f);
-        items_1.setDetail("ThinkPad T430");
+        items_1.setDetail("ThinkPad y700");
 
         Items items_2 = new Items();
         items_2.setName("apple");

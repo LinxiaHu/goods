@@ -37,7 +37,7 @@
 	<!-- 切面 -->
 	<aop:config>
 		<aop:advisor advice-ref="txAdvice"
-			pointcut="execution(* com.hd.ssm.service.impl.*.*(..))" />
+			pointcut="execution(* com.hd.service.impl.*.*(..))" />
 	</aop:config>
 
 </beans>
