@@ -22,9 +22,9 @@ public class UserServiceImplTest {
 
     @Test
     public void testFindUserList() throws Exception {
-//        UserService userService = (UserService) applicationContext.getBean("userService");
-//    	System.out.println(userService);
-//        System.out.println(userService.findUserList(null));
+        UserService userService = (UserService) applicationContext.getBean("userService");
+        System.out.println(userService.findUserList(null));
+        System.out.println("-----------------------------------------------------------");
         UserCustomMapper userCustomMapper = (UserCustomMapper) applicationContext.getBean("userCustomMapper");
         System.out.println(userCustomMapper.findUserList(null));
     	
