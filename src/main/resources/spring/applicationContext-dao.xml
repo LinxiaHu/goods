@@ -14,9 +14,9 @@
 		http://www.springframework.org/schema/tx/spring-tx-3.2.xsd ">
 
     <context:annotation-config/>
-    <!-- 该 BeanPostProcessor 将自动对标注 @Autowired 的 Bean 进行注入 -->
-    <bean
-        class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+    <!-- 该 BeanPostProcessor 将自动对标注 @Autowired 的 Bean 进行注入 且已经包含在上面的bean中-->
+    <!-- <bean
+        class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" /> -->
     <!-- 加载配置文件 -->
     <context:property-placeholder location="classpath:db.properties"/>
     <!-- 数据库连接池 -->
@@ -64,7 +64,7 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
     <!--若没有上述mapper扫描器，则需要手工配置mapper bean -->
-
+	
 
 
 </beans>

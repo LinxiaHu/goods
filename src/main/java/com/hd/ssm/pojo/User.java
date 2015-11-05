@@ -2,7 +2,7 @@ package com.hd.ssm.pojo;
 
 public class User {
     private String uid;
-
+    
     private String loginname;
 
     private String loginpass;

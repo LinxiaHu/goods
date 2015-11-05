@@ -27,6 +27,7 @@ public class UserServiceImplTest {
         System.out.println("-----------------------------------------------------------");
         UserCustomMapper userCustomMapper = (UserCustomMapper) applicationContext.getBean("userCustomMapper");
         System.out.println(userCustomMapper.findUserList(null));
+        
     	
     }
 }

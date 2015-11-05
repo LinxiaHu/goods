@@ -3,12 +3,14 @@ package com.hd.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hd.service.UserService;
+import com.hd.service.impl.UserServiceImpl;
 import com.hd.ssm.pojo.UserCustom;
 
 /**
@@ -17,21 +19,23 @@ import com.hd.ssm.pojo.UserCustom;
 
 @Controller
 public class UserController {
-    @Autowired
-    private UserService userService;
 
-    @RequestMapping(value = "/queryUser.action", method = {RequestMethod.POST, RequestMethod.GET})
-    public ModelAndView queryUser() throws Exception {
+	@Autowired(required = false) @Qualifier("userService")
+	private UserService userService;
 
-        List<UserCustom> userList = userService.findUserList(null);
+	@RequestMapping(value = "/queryUser.action", method = { RequestMethod.POST,
+			RequestMethod.GET })
+	public ModelAndView queryUser() throws Exception {
 
-        ModelAndView modelAndView = new ModelAndView();
+		List<UserCustom> userList = userService.findUserList(null);
 
-        modelAndView.addObject("userlist", userList);
+		ModelAndView modelAndView = new ModelAndView();
 
-        modelAndView.setViewName("user/userList");
+		modelAndView.addObject("userlist", userList);
 
-        return modelAndView;
+		modelAndView.setViewName("user/userList");
 
-    }
+		return modelAndView;
+
+	}
 }
