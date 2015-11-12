@@ -7,5 +7,8 @@
 <title>Welcome to qunar</title>
 </head>
 <body>Welcome to qunar!
+
+<jsp:forward page="WEB-INF/jsp/user/login.jsp"></jsp:forward>
+
 </body>
 </html>

@@ -9,7 +9,9 @@
     <title>用户列表</title>
 </head>
 <body>
-用户列表：
+欢迎您：${sessionScope.uc.loginname} &nbsp;&nbsp;&nbsp;&nbsp;
+<a href="/goods/queryUserInfo.action">用户中心</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "${pageContext.request.contextPath}/tmp.jsp?loginout=true">退出</a><br>
+用户列表：<br>
 <table width="100%" border=1>
     <tr>
         <td>用户Id</td>
@@ -21,12 +23,12 @@
     </tr>
     <c:forEach items="${userlist}" var="item">
         <tr>
-            <td>${item.uid }</td>
-            <td>${item.loginname }</td>
-            <td>${item.loginpass }</td>
-            <td>${item.email }</td>
-            <td>${item.status }</td>
-            <td>${item.activationcode }</td>
+            <td>${item.uid}</td>
+            <td>${item.loginname}</td>
+            <td>${item.loginpass}</td>
+            <td>${item.email}</td>
+            <td>${item.status}</td>
+            <td>${item.activationcode}</td>
         </tr>
     </c:forEach>
 </table>

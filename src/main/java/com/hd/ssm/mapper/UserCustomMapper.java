@@ -13,4 +13,5 @@ import com.hd.ssm.pojo.UserQueryVo;
 
 public interface UserCustomMapper {
     public List<UserCustom> findUserList(UserQueryVo userQueryVo) throws Exception;
+    public UserCustom findCheckUserLogin(UserQueryVo userQueryVo) throws Exception;
 }

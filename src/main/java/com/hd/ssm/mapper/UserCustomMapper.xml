@@ -16,5 +16,10 @@
             <include refid="query_user_where"></include>
         </where>
     </select>
+    
+    <select id="findCheckUserLogin" parameterType="com.hd.ssm.pojo.UserQueryVo" resultType="com.hd.ssm.pojo.UserCustom">
+    	SELECT t_user.* FROM t_user
+    	WHERE loginpass = #{userCustom.loginpass} and loginname = #{userCustom.loginname};
+    </select>
 
 </mapper>

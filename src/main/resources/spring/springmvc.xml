@@ -38,6 +38,7 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/*.action" />
+			<mvc:mapping path="/*.jsp"/>
 			<bean class="com.hd.interceptor.GeneralInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors> 
