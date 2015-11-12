@@ -11,7 +11,7 @@
 <body>
 	请登录：<br>
 
-	<form method="POST" action="/goods/queryUserLogin.action">
+	<form method="POST" action="${pageContext.request.contextPath}/queryUserLogin.action">
 		用户名：<input type="text" name="userCustom.loginname" /> 
 		
 		密码： <input type="password" name="userCustom.loginpass" />

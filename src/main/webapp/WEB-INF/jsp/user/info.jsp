@@ -9,7 +9,7 @@
 <title>用户中心</title>
 </head>
 <body>
-	${sessionScope.uc.loginname}的用户中心！&nbsp;&nbsp;&nbsp;&nbsp;<a href="/goods/queryUserLogin.action">返回</a><br>
+	${sessionScope.uc.loginname}的用户中心！&nbsp;&nbsp;&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/queryUserLogin.action">返回</a><br>
 	Email:${sessionScope.uc.email}<br>
 	Status:${sessionScope.uc.status}<br>
 

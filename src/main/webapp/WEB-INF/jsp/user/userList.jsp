@@ -10,7 +10,7 @@
 </head>
 <body>
 欢迎您：${sessionScope.uc.loginname} &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="/goods/queryUserInfo.action">用户中心</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "${pageContext.request.contextPath}/tmp.jsp?loginout=true">退出</a><br>
+<a href="${pageContext.request.contextPath}/queryUserInfo.action">用户中心</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href = "${pageContext.request.contextPath}/tmp.jsp?loginout=true">退出</a><br>
 用户列表：<br>
 <table width="100%" border=1>
     <tr>
