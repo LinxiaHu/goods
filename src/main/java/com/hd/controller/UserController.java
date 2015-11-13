@@ -7,14 +7,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hd.service.UserService;
-import com.hd.service.impl.UserServiceImpl;
 import com.hd.ssm.pojo.UserCustom;
 import com.hd.ssm.pojo.UserQueryVo;
 
