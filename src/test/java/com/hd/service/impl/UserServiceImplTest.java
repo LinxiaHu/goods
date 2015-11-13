@@ -7,6 +7,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.hd.service.UserService;
 import com.hd.ssm.mapper.UserCustomMapper;
+import com.hd.ssm.pojo.UserCustom;
+import com.hd.ssm.pojo.UserQueryVo;
 
 /**
  * Created by Chunyun on 2015/11/4.
@@ -27,7 +29,13 @@ public class UserServiceImplTest {
         System.out.println("-----------------------------------------------------------");
         UserCustomMapper userCustomMapper = (UserCustomMapper) applicationContext.getBean("userCustomMapper");
         System.out.println(userCustomMapper.findUserList(null));
-        
-    	
+        System.out.println("-----------------------------------------------------------");
+        UserQueryVo userQueryVo = new UserQueryVo();
+        UserCustom user = new UserCustom();
+        user.setLoginname("def");
+        user.setLoginpass("def");
+        userQueryVo.setUserCustom(user);
+		user = userService.findCheckUserLogin(userQueryVo);
+		System.out.println(user.getLoginname() + ":" + user.getLoginpass());
     }
 }
