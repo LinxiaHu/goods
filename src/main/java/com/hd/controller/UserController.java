@@ -84,5 +84,17 @@ public class UserController {
 
 		return mv;
 	}
+	
+	@RequestMapping(value = "/updateUser.action", method = RequestMethod.GET)
+	public ModelAndView updateUser(String id) throws Exception {
+		
+		ModelAndView mv = new ModelAndView();
+		
+		mv.addObject("user", null);
+		
+		mv.setViewName("user/update");
+		
+		return mv;
+	}
 
 }
