@@ -9,10 +9,38 @@
 <title>修改用户信息</title>
 </head>
 <body>
-	${sessionScope.uc.loginname}的用户中心！&nbsp;&nbsp;&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/queryUserLogin.action">返回</a><br>
-	Email:${sessionScope.uc.email}<br>
-	Status:${sessionScope.uc.status}<br>
+	${sessionScope.uc.loginname}信息修改：&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="${pageContext.request.contextPath}/queryUserLogin.action">返回</a>
+	<br>
 
-	
+	<form action="updateSubmitUser.action" method="POST">
+		<input type="hidden" value="${userCustom.uid}"
+			name="uid" /> <input type="hidden"
+			value="status" name="${userCustom.status}" /> <input
+			type="hidden" value="${userCustom.activationcode}"
+			name="activationcode" />
+		<table width="100%" border=1>
+
+			<tr>
+				<td>用户Id:${userCustom.uid}</td>
+			</tr>
+			<tr>
+				<td>用户登录名:<input value="${userCustom.loginname}" type="text"
+					name="loginname"></td>
+			</tr>
+			<tr>
+				<td>用户密码:<input value="${userCustom.loginpass}" type="text"
+					name="loginpass"></td>
+			</tr>
+			<tr>
+				<td>用户Email:<input value="${userCustom.email}" type="text"
+					name="email"></td>
+			</tr>
+
+		</table>
+		<br> <input type="submit" value="提交">
+	</form>
+
+
 </body>
 </html>

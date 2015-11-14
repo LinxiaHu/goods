@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.hd.service.UserService;
+import com.hd.ssm.pojo.User;
 import com.hd.ssm.pojo.UserCustom;
 import com.hd.ssm.pojo.UserQueryVo;
 
@@ -79,21 +81,62 @@ public class UserController {
 		ModelAndView mv = new ModelAndView();
 
 		mv.addObject("user", null);
-		
+
 		mv.setViewName("user/info");
 
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/updateUser.action", method = RequestMethod.GET)
 	public ModelAndView updateUser(String id) throws Exception {
-		
+
 		ModelAndView mv = new ModelAndView();
-		
-		mv.addObject("user", null);
-		
+
+		User user = userService.selectByPrimaryKey(id);
+
+		UserCustom userCustom = new UserCustom();
+
+		BeanUtils.copyProperties(user, userCustom);// 将user信息放入到扩展usercustom中
+
+		mv.addObject("userCustom", userCustom);
+
 		mv.setViewName("user/update");
-		
+
+		return mv;
+	}
+
+	@RequestMapping(value = "/updateSubmitUser.action", method = RequestMethod.POST)
+	public ModelAndView updateSubmitUser(UserCustom userCustom,
+			HttpServletRequest request) throws Exception {
+
+		ModelAndView mv = new ModelAndView();
+
+		User user = new User();
+
+		BeanUtils.copyProperties(userCustom, user);
+
+		String uid = user.getUid();
+
+		User tmpUser = userService.selectByPrimaryKey(uid);
+
+		// 判断传过来的user是否被改动过，若不改动则不执行update的sql语句
+		if (!tmpUser.equals(user)) {
+			int count = userService.updateByPrimaryKey(user);// 成功返回1
+
+			if (count == 1) {
+				List<UserCustom> userList = userService.findUserList(null);
+				mv.addObject("userlist", userList);
+				mv.setViewName("user/userList");
+			} else {
+				mv.addObject("userlist", null);
+				mv.setViewName("user/errorUserUpdate");
+			}
+		} else { //若没有修改，则原样返回用户列表界面
+			List<UserCustom> userList = userService.findUserList(null);
+			mv.addObject("userlist", userList);
+			mv.setViewName("user/userList");
+		}
+
 		return mv;
 	}
 
