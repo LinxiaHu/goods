@@ -28,6 +28,7 @@ public class UserServiceImplTest {
         System.out.println(userService.findUserList(null));
         System.out.println("-----------------------------------------------------------");
         UserCustomMapper userCustomMapper = (UserCustomMapper) applicationContext.getBean("userCustomMapper");
+        System.out.println("生成的mapper代理对象：" + userCustomMapper);
         System.out.println(userCustomMapper.findUserList(null));
         System.out.println("-----------------------------------------------------------");
         UserQueryVo userQueryVo = new UserQueryVo();
