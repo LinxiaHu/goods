@@ -17,4 +17,5 @@
 
 	<!--若采用自动扫描Service，则无需以下配置 -->
 	<bean id="userService" class="com.hd.service.impl.UserServiceImpl" />
+	<bean id="orderService" class="com.hd.service.impl.OrderServiceImpl" />
 </beans>
