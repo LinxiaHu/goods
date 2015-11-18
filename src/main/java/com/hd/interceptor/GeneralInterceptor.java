@@ -35,6 +35,8 @@ public class GeneralInterceptor implements HandlerInterceptor {
 			UserCustom uc = (UserCustom) request.getSession().getAttribute("uc");
 			if(null != uc) {
 				flag = true;
+			}else {
+				request.getRequestDispatcher("/WEB-INF/jsp/user/login.jsp").forward(request, response);
 			}
 		}
 		return flag;
