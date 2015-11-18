@@ -5,5 +5,5 @@ import java.util.List;
 import com.hd.ssm.pojo.OrderCustom;
 
 public interface OrderCustomMapper {
-	List<OrderCustom> findOrderAndOrderItem();
+	List<OrderCustom> findOrderAndOrderItem() throws Exception;
 }
