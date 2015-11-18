@@ -6,12 +6,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>用户中心</title>
+<title>提示信息</title>
 </head>
 <body>
-	${sessionScope.uc.loginname}的用户中心！&nbsp;&nbsp;&nbsp;&nbsp;<a href="${pageContext.request.contextPath}/queryUserLogin.action">返回</a><br>
-	Email:${sessionScope.uc.email}<br>
-	Status:${sessionScope.uc.status}<br>
-	<a href="${pageContext.request.contextPath}/order/findOrderDetail.action">查询所有订单列表</a><br>
+	没有找到符合的订单信息！
+	
 </body>
 </html>
