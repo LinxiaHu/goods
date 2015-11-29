@@ -30,18 +30,29 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	<!-- 用于自动加载mapping和adapter -->
-	<mvc:annotation-driven />
+	<!-- 用于自动加载mapping和adapter,conversion-service用于类型转换 -->
+	<mvc:annotation-driven conversion-service="conversionService" />
 	<!-- 用于自动扫描组件，如controller -->
 	<context:component-scan base-package="com.hd.controller" />
 
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/*.action" />
-			<mvc:mapping path="/*.jsp"/>
-			<mvc:mapping path="/order/*.action"/>
+			<mvc:mapping path="/*.jsp" />
+			<mvc:mapping path="/order/*.action" />
 			<bean class="com.hd.interceptor.GeneralInterceptor" />
 		</mvc:interceptor>
-	</mvc:interceptors> 
+	</mvc:interceptors>
+
+	<!-- 类型转换器 -->
+	<bean id="conversionService"
+		class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<!-- 日期类型转换器 -->
+				<bean class="com.hd.controller.convert.CustomDateConverter"></bean>
+			</list>
+		</property>
+	</bean>
 
 </beans>
