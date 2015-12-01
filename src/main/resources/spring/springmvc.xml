@@ -30,8 +30,9 @@
 		<property name="prefix" value="/WEB-INF/jsp/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	<!-- 用于自动加载mapping和adapter,conversion-service用于类型转换 -->
-	<mvc:annotation-driven conversion-service="conversionService" />
+	<!-- 用于自动加载mapping和adapter,conversion-service用于类型转换,validator用于校验 -->
+	<mvc:annotation-driven conversion-service="conversionService"
+		validator="validator" />
 	<!-- 用于自动扫描组件，如controller -->
 	<context:component-scan base-package="com.hd.controller" />
 
@@ -53,6 +54,30 @@
 				<bean class="com.hd.controller.convert.CustomDateConverter"></bean>
 			</list>
 		</property>
+	</bean>
+
+	<!-- 校验器 -->
+	<bean id="validator"
+		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+		<!-- hibernate校验器 -->
+		<property name="providerClass" value="org.hibernate.validator.HibernateValidator" />
+		<!-- 指定资源校验文件，不指定则使用classpath下的ValidationMessage.properties -->
+		<property name="validationMessageSource" ref="messageSource" />
+	</bean>
+
+	<!-- 校验错误信息配置文件 -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<!-- 资源文件名 -->
+		<property name="basenames">
+			<list>
+				<value>classpath:CustomValidationMessages</value>
+			</list>
+		</property>
+		<!-- 资源文件编码格式 -->
+		<property name="fileEncodings" value="utf-8" />
+		<!-- 对资源文件内容缓存时间，单位秒 -->
+		<property name="cacheSeconds" value="120" />
 	</bean>
 
 </beans>
