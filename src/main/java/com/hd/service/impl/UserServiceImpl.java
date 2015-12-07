@@ -2,6 +2,9 @@ package com.hd.service.impl;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.hd.service.UserService;
@@ -42,5 +45,25 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public int updateByPrimaryKey(User record) {
 		return userMapper.updateByPrimaryKey(record);
+	}
+	
+	@PostConstruct
+	public void initConstruct() {
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println("调用UserServiceImpl");
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+		System.out.println();
+	}
+	
+	@PreDestroy
+	public void destory() {
+		System.out.println("结束UserServiceImpl调用");
 	}
 }
