@@ -47,6 +47,7 @@ public class UserServiceImpl implements UserService {
 		return userMapper.updateByPrimaryKey(record);
 	}
 	
+	// 相当于xml中<bean>中的init-method属性
 	@PostConstruct
 	public void initConstruct() {
 		System.out.println();
@@ -62,6 +63,7 @@ public class UserServiceImpl implements UserService {
 		System.out.println();
 	}
 	
+	// 相当于xml中<bean>的destroy-method属性
 	@PreDestroy
 	public void destory() {
 		System.out.println("结束UserServiceImpl调用");
