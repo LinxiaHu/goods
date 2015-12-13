@@ -7,6 +7,7 @@ import javax.annotation.PreDestroy;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.hd.exception.CustomException;
 import com.hd.service.UserService;
 import com.hd.ssm.mapper.UserCustomMapper;
 import com.hd.ssm.mapper.UserMapper;
@@ -39,6 +40,11 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User selectByPrimaryKey(String uid) throws Exception {
+		// 用于测试全局异常处理器
+//		uid = "";
+//		if (uid == "" || uid == null) {
+//			throw new CustomException("uid为空");
+//		}
 		return userMapper.selectByPrimaryKey(uid);
 	}
 
