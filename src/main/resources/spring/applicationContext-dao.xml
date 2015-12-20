@@ -39,7 +39,8 @@
     </bean>
 
     <bean id="jedisShardInfo" class="redis.clients.jedis.JedisShardInfo">
-        <constructor-arg index="0" value="192.168.206.129"/>
+        <!-- <constructor-arg index="0" value="192.168.206.129"/> -->
+        <constructor-arg index="0" value="104.131.64.94"/>
         <constructor-arg index="1" value="6379" type="int"/>
     </bean>
 
