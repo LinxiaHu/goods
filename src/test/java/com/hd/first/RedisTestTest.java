@@ -32,12 +32,13 @@ public class RedisTestTest {
 				.getBean("jedis");
 		ShardedJedis jedis2 = jedisPool.getResource();
 //		System.out.println(jedis2.get("test1"));
-		jedis2.sadd("set1", "a");
+//		jedis2.sadd("set1", "a");
 //		byte val[] = new byte[3];
 //		val[0] = 1;
 //		val[1] = 2;
 //		val[2] = 3;
-		jedis2.sadd("set2", "b");
+//		jedis2.sadd("set2", "b");
+		jedis2.sadd("set3-from-myeclipse", "c");
 	}
 
 }
