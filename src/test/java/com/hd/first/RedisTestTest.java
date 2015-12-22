@@ -48,6 +48,7 @@ public class RedisTestTest {
 //		System.out.println(jedis2.get("list-1"));
 		jedis2.sadd("set1", "from myeclipse-1");
 		System.out.println(jedis2.smembers("set1"));
+		jedis2.sadd("set1", "from eclipse-2");
 	}
 
 }
