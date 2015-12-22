@@ -49,4 +49,12 @@
 		<birthday>1987-06-08</birthday>
 		<memo>好学生commit-1</memo>
 	</student>
+	<student id="7" group="6">
+		<name>小明from eclipse-3</name>
+		<sex>男commit-3</sex>
+		<age>27</age>
+		<email>xiaoming@163.com</email>
+		<birthday>1986-06-08</birthday>
+		<memo>好学生commit-3</memo>
+	</student>
 </root>
