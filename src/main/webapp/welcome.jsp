@@ -5,10 +5,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Welcome to qunar</title>
+<script type="text/javascript" src="js/jquery-1.6.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		
+		
+	});
+
+
+</script>
 </head>
 <body>Welcome to qunar!
 
 <jsp:forward page="WEB-INF/jsp/user/login.jsp"></jsp:forward>
+
 
 </body>
 </html>
