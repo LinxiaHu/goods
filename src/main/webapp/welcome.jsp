@@ -7,17 +7,15 @@
 <title>Welcome to qunar</title>
 <script type="text/javascript" src="js/jquery-1.6.1.js"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
-		
-		
+	$(document).ready(function() {
+
 	});
-
-
 </script>
 </head>
-<body>Welcome to qunar!
+<body>
+	Welcome to qunar!
 
-<jsp:forward page="WEB-INF/jsp/user/login.jsp"></jsp:forward>
+	<jsp:forward page="WEB-INF/jsp/user/login.jsp"></jsp:forward>
 
 
 </body>

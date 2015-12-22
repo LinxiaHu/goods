@@ -14,9 +14,10 @@ import com.hd.ssm.pojo.UserQueryVo;
 
 public class GeneralInterceptor implements HandlerInterceptor {
 
-	private String[] exel = {"Login.action"};
+	private String[] exel = { "Login.action" };
 	@Autowired
 	private UserService userService;
+
 	@Override
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler) throws Exception {
@@ -24,37 +25,39 @@ public class GeneralInterceptor implements HandlerInterceptor {
 		System.out.println("通用拦截器1");
 		String url = request.getRequestURL().toString();
 		System.out.println(url);
-		for(String s : exel) {
-			if(url.contains(s)) {
+		for (String s : exel) {
+			if (url.contains(s)) {
 				flag = true;
 				break;
 			}
 		}
-		
-		if(!flag) {
-			UserCustom uc = (UserCustom) request.getSession().getAttribute("uc");
-			if(null != uc) {
+
+		if (!flag) {
+			UserCustom uc = (UserCustom) request.getSession()
+					.getAttribute("uc");
+			if (null != uc) {
 				flag = true;
-			}else {
-				request.getRequestDispatcher("/WEB-INF/jsp/user/login.jsp").forward(request, response);
+			} else {
+				request.getRequestDispatcher("/WEB-INF/jsp/user/login.jsp")
+						.forward(request, response);
 			}
 		}
 		return flag;
-		
+
 	}
 
 	@Override
 	public void postHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-		
+
 	}
 
 	@Override
 	public void afterCompletion(HttpServletRequest request,
 			HttpServletResponse response, Object handler, Exception ex)
 			throws Exception {
-		
+
 	}
 
 }
