@@ -31,8 +31,8 @@ public class RedisTestTest {
 		ShardedJedisPool jedisPool = (ShardedJedisPool) application
 				.getBean("jedis");
 		ShardedJedis jedis2 = jedisPool.getResource();
-		System.out.println(jedis2.get("test1"));
-		jedis2.sadd("set1", "a");
+//		System.out.println(jedis2.get("test1"));
+//		jedis2.sadd("set1", "a");
 //		byte val[] = new byte[3];
 //		val[0] = 1;
 //		val[1] = 2;
