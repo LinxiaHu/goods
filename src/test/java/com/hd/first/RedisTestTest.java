@@ -33,11 +33,11 @@ public class RedisTestTest {
 		ShardedJedis jedis2 = jedisPool.getResource();
 		System.out.println(jedis2.get("test1"));
 		jedis2.sadd("set1", "a");
-		byte val[] = new byte[3];
-		val[0] = 1;
-		val[1] = 2;
-		val[2] = 3;
-		jedis2.sadd("set2", val.toString());
+//		byte val[] = new byte[3];
+//		val[0] = 1;
+//		val[1] = 2;
+//		val[2] = 3;
+//		jedis2.sadd("set2", val.toString());
 //		System.out.println(jedis2.get("test1"));
 //		jedis2.sadd("set1", "a");
 //		byte val[] = new byte[3];
@@ -56,7 +56,7 @@ public class RedisTestTest {
 //		jedis2.sadd("set1", "from myeclipse-1");
 //		System.out.println(jedis2.smembers("set1"));
 //		jedis2.sadd("set1", "from eclipse-2");
-		jedis2.sadd("set1", "from eclipse-3");
+//		jedis2.sadd("set1", "from eclipse-3");
 		System.out.println(jedis2.smembers("set1"));
 	}
 
