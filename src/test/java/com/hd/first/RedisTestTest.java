@@ -38,6 +38,26 @@ public class RedisTestTest {
 		val[1] = 2;
 		val[2] = 3;
 		jedis2.sadd("set2", val.toString());
+//		System.out.println(jedis2.get("test1"));
+//		jedis2.sadd("set1", "a");
+//		byte val[] = new byte[3];
+//		val[0] = 1;
+//		val[1] = 2;
+//		val[2] = 3;
+//		jedis2.sadd("set2", "b");
+//		jedis2.sadd("set1", "hello,jedis!");
+//		System.out.println(jedis2.smembers("set1"));
+//		System.out.println(jedis2.sismember("set3", "c"));
+		
+//		jedis2.set("list-1", "l1");
+//		System.out.println(jedis2.get("list-1"));
+//		jedis2.set("list-1", "l2");
+//		System.out.println(jedis2.get("list-1"));
+//		jedis2.sadd("set1", "from myeclipse-1");
+//		System.out.println(jedis2.smembers("set1"));
+//		jedis2.sadd("set1", "from eclipse-2");
+		jedis2.sadd("set1", "from eclipse-3");
+		System.out.println(jedis2.smembers("set1"));
 	}
 
 }

@@ -4,7 +4,6 @@
          http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 
-
 	<!-- 编码配置 -->
 	<filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
@@ -24,6 +23,11 @@
 	</filter-mapping>
 
 	<!-- spring 配置 -->
+
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:spring/applicationContext-*.xml</param-value>

@@ -1,39 +1,48 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.hd</groupId>
-	<artifactId>hd</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>good</artifactId>
 	<packaging>war</packaging>
-	<name>test</name>
-
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.mortbay.jetty</groupId>
-				<artifactId>maven-jetty-plugin</artifactId>
-				<version>6.1.26</version>
-				<configuration>
-					<webAppSourceDirectory>${basedir}/src/main/webapp</webAppSourceDirectory>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
-
+	<version>0.0.1-SNAPSHOT</version>
+	<name>good Maven Webapp</name>
+	<url>http://maven.apache.org</url>
 	<dependencies>
-
-		<!-- xml解析器：xmlpullparser ,安卓自带的解析器 -->
+		<!-- xml解析器：xmlpullparser,安卓自带的解析器 -->
 		<dependency>
 			<groupId>xmlpull</groupId>
 			<artifactId>xmlpull</artifactId>
 			<version>1.1.3.4d_b4_min</version>
 		</dependency>
-
+		<!--xml解析器：xmlpullparser,XmlPullParserFactory -->
 		<dependency>
 			<groupId>kxml2</groupId>
 			<artifactId>kxml2</artifactId>
 			<version>2.3.0</version>
+		</dependency>
+		
+		<dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.1.39</version>
+        </dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.3.0.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.logging</groupId>
+			<artifactId>jboss-logging</artifactId>
+			<version>3.1.0.GA</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
 		</dependency>
 
 		<dependency>
@@ -242,4 +251,8 @@
 		</dependency>
 
 	</dependencies>
+	<build>
+		<finalName>good</finalName>
+	</build>
 </project>
+

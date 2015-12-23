@@ -9,4 +9,9 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 		<!-- 可以省略，因为使用了spring与mybatis整合后，扫描mapper由spring管理 -->
 		<package name="com.hd.ssm.mapper" />
 	</mappers>
+
+
+
+
+
 </configuration>
