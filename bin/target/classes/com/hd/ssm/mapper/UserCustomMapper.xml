@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hd.ssm.mapper.UserCustomMapper">
+
+    <sql id="query_user_where">
+        <if test="userCustom!=null">
+            <if test="userCustom.loginname!=null and userCustom.loginname!=''">
+                and userCustom.loginname like '%${userCustom.loginname}%';
+            </if>
+        </if>
+    </sql>
+
+    <select id="findUserList" parameterType="com.hd.ssm.pojo.UserQueryVo" resultType="com.hd.ssm.pojo.UserCustom">
+        SELECT t_user.* FROM t_user
+        <where>
+            <include refid="query_user_where"></include>
+        </where>
+    </select>
+    
+    <select id="findCheckUserLogin" parameterType="com.hd.ssm.pojo.UserQueryVo" resultType="com.hd.ssm.pojo.UserCustom">
+    	SELECT t_user.* FROM t_user
+    	WHERE loginpass = #{userCustom.loginpass} and loginname = #{userCustom.loginname};
+    </select>
+
+</mapper>
