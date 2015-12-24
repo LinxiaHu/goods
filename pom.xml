@@ -20,12 +20,12 @@
 			<artifactId>kxml2</artifactId>
 			<version>2.3.0</version>
 		</dependency>
-		
+
 		<dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.1.39</version>
-        </dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.1.39</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
