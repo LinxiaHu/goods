@@ -26,6 +26,7 @@ public class OrderServiceImplTest {
     @Test
     public void findOrderAndOrderItem() throws Exception {
         OrderService orderService = (OrderService) applicationContext.getBean("orderService");
+        System.out.println("自动生成的代理对象：" + orderService);
         List<OrderCustom> orderCustoms = orderService.findOrderAndOrderItem();
         System.out.println(orderCustoms);
         System.out.println("记录条数为：" + orderCustoms.size());
