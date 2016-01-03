@@ -12,6 +12,7 @@
 	欢迎您：${sessionScope.uc.loginname} &nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="${pageContext.request.contextPath}/queryUserInfo.action">用户中心</a>&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="${pageContext.request.contextPath}/tmp.jsp?loginout=true">退出</a>
+	<a href="${pageContext.request.contextPath}/student/sublistServlet">进入Student操作</a>
 	<br> 用户列表：
 	<br>
 	<table width="100%" border=1>

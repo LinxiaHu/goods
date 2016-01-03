@@ -64,7 +64,7 @@ public class SublistServlet extends HttpServlet {
 		request.setAttribute("stuName", stuName);
 		request.setAttribute("gender", gender);
 		
-		request.getRequestDispatcher("sublistStudent.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/student/sublistStudent.jsp").forward(request, response);
 	}
 
 }

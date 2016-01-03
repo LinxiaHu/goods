@@ -41,6 +41,7 @@
 			<mvc:mapping path="/*.action" />
 			<mvc:mapping path="/*.jsp" />
 			<mvc:mapping path="/order/*.action" />
+			<mvc:mapping path="/student/*Servlet"/>
 			<bean class="com.hd.interceptor.GeneralInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
