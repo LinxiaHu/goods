@@ -31,7 +31,7 @@ function firstPage(){
 		alert("已经是第一页数据");
 		return false;
 	}else{
-		submitForm("<%=context %>/sublist/SublistServlet?pageNum=1");
+		submitForm("${pageContext.request.contextPath}/student/sublistServlet?pageNum=1");
 		return true;
 	}
 }
@@ -42,7 +42,7 @@ function nextPage(){
 		alert("已经是最后一页数据");
 		return false;
 	}else{
-		submitForm("<%=context %>/sublist/SublistServlet?pageNum=" + (currentPage+1));
+		submitForm("${pageContext.request.contextPath}/student/sublistServlet?pageNum=" + (currentPage+1));
 		return true;
 	}
 }
@@ -64,6 +64,7 @@ function lastPage(){
 		alert("已经是最后一页数据");
 		return false;
 	}else{
+		//alert("跳到最后一页");
 		submitForm("${pageContext.request.contextPath}/student/sublistServlet?pageNum=${result.totalPage}");
 		return true;
 	}
@@ -144,7 +145,7 @@ function initPage(){
 			<a href="#" onclick="firstPage();">首页</a>&nbsp;&nbsp; 
 			<a href="#" onclick="nextPage();">下一页</a>&nbsp;&nbsp; 
 			<a href="#" onclick="previousPage();">上一页</a>&nbsp;&nbsp;
-			<a href="#" onblur="lastPage();">尾页</a>	
+			<a href="#" onclick="lastPage();">尾页</a>	
 		</c:if>
 	</div>
 </body>
