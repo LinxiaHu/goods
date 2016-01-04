@@ -49,6 +49,7 @@
 	</servlet-mapping>
 	
 	<!-- 普通Servlet -->
+	<!-- student 分页servlet -->
 	<servlet>
 		<servlet-name>sublistServlet</servlet-name>
 		<servlet-class>com.hd.pager.SublistServlet</servlet-class>
@@ -57,6 +58,15 @@
 		<servlet-name>sublistServlet</servlet-name>
 		<url-pattern>/student/sublistServlet</url-pattern>
 	</servlet-mapping>
+	
+	<filter>
+		<filter-name>loginfilter</filter-name>
+		<filter-class>com.hd.pager.LoginFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>loginfilter</filter-name>
+		<url-pattern>/student/*</url-pattern>
+	</filter-mapping>
 
 	<welcome-file-list>
 		<welcome-file>welcome.jsp</welcome-file>
