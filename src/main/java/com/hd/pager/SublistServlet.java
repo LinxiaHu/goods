@@ -35,7 +35,7 @@ public class SublistServlet extends HttpServlet {
 		String pageNumStr = request.getParameter("pageNum"); 
 		if(pageNumStr !=null && !StringUtil.isNum(pageNumStr)){
 			request.setAttribute("errorMsg", "参数传输错误");
-			request.getRequestDispatcher("sublistStudent.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/student/sublistStudent.jsp").forward(request, response);
 			return;
 		}
 		
